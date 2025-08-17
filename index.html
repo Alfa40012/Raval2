@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RAFAL IPTV - أفضل خدمة IPTV لمشاهدة القنوات والأفلام والمسلسلات مباشرة على جهازك. اشترك الآن واستمتع بتجربة مشاهدة فريدة.">
+  <meta name="keywords" content="IPTV, رافال, مشاهدة, أفلام, مسلسلات, رياضة, قنوات, بث مباشر, اشتراك, تطبيقات, تلفزيون, ترفيه">
+  <meta property="og:title" content="RAFAL IPTV EXTREME">
+  <meta property="og:description" content="أفضل خدمة IPTV لمشاهدة القنوات والأفلام والمسلسلات مباشرة على جهازك.">
+  <meta property="og:image" content="https://a.top4top.io/p_34613ua220.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>RAFAL IPTV EXTREME</title>
+  <link rel="icon" href="https://c.top4top.io/p_34576kyif0.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()" aria-label="تبديل الوضع الداكن">🌓</button>
+  <button class="back-to-top" onclick="scrollToTop()" aria-label="العودة إلى الأعلى">⬆️</button>
+  <div class="notification" id="notification"></div>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="#subscribe-area">اشترك الآن</a></li>
+      <li><a href="#payment-gateway">بوابة الدفع</a></li>
+      <li><a href="#media-grid">المحتوى</a></li>
+      <li><a href="#payment-methods">طرق الدفع</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <img src="https://i.top4top.io/p_3481ezgq00.jpg" alt="RAFAL IPTV Logo" loading="lazy">
+    <h1>📱 RAFAL IPTV EXTREME 📱</h1>
+    <div class="clock-container">
+      <div class="time" id="time">00:00:00</div>
+      <div class="date" id="date">اليوم</div>
+    </div>
+    <div class="countdown">⏳ ينتهي عرض الخصم خلال: <span id="countdown"></span></div>
+  </header>
+
+  <div class="news-ticker">
+    <div class="news-ticker-content">📢 | أقوى العروض | محتوى مميز | دعم متواصل | رافال IPTV الأفضل على الإطلاق | 🔥 اشترك الآن</div>
+  </div>
+
+  <!-- استخدام وسم main للمحتوى الرئيسي -->
+  <main>
+    <div class="copy-box">
+      <h2>📥 كود التفعيل الخاص بك</h2>
+      <textarea id="copyText" readonly>
+🔐 كود التحميل: 4163171
+
+📲 لتحميل تطبيقات RAFAL IPTV:
+اضغط هنا: https://www.mediafire.com/folder/jmfo7j4wyqcu5/Rafal+apk
+
+✅ مشاهدة ممتعة!
+      </textarea>
+      <button onclick="copyAndSend()" aria-label="نسخ الكود وإرساله إلى تيليجرام">📋 نسخ الكود وإرساله إلى التليجرام</button>
+    </div>
+
+    <div class="toast" id="toast">✅ تم النسخ بنجاح!</div>
+
+    <section class="section">
+      <h2>🎯 مقدمة</h2>
+      <p>مرحبًا بك في <strong>RAFAL IPTV</strong>، منصة الترفيه الأولى للبث المباشر والمسلسلات والأفلام على جميع الأجهزة. الجودة والسرعة في خدمتك.</p>
+    </section>
+
+    <section class="section" id="subscribe-area">
+      <h2>📝 اشترك الآن</h2>
+      <form id="subscribe-form">
+        <label for="name">الاسم</label>
+        <input type="text" id="name" placeholder="أدخل اسمك" required aria-describedby="name-help">
+        <span id="name-help" class="sr-only">أدخل اسمك الكامل لتسجيل الاشتراك</span>
+        <label for="email">البريد الإلكتروني</label>
+        <input type="email" id="email" placeholder="أدخل بريدك الإلكتروني" required aria-describedby="email-help">
+        <span id="email-help" class="sr-only">أدخل بريدك الإلكتروني لتأكيد الاشتراك</span>
+        <label for="plan">اختر الباقة</label>
+        <select id="plan" required aria-describedby="plan-help">
+          <option value="">اختر باقة</option>
+          <option value="monthly">شهري</option>
+          <option value="quarterly">ربع سنوي</option>
+          <option value="yearly">سنوي</option>
+        </select>
+        <span id="plan-help" class="sr-only">اختر الباقة المناسبة لاشتراكك</span>
+        <button type="submit">اشترك الآن</button>
+      </form>
+    </section>
+
+    <section class="section" id="payment-gateway">
+      <h2>💰 بوابة الدفع الآمنة</h2>
+      <div class="payment-container">
+        <div class="payment-form-container">
+          <div class="payment-header">
+            <h3>🔒 ادفع بأمان</h3>
+            <p>اختر باقتك وادفع بسهولة وأمان</p>
+          </div>
+          
+          <form id="payment-form" class="payment-form">
+            <div class="subscription-plans">
+              <h4>اختر باقة الاشتراك:</h4>
+              <div class="plans-grid">
+                <div class="plan-card" data-plan="monthly" data-price="15">
+                  <div class="plan-header">
+                    <h5>باقة شهرية</h5>
+                    <div class="price">$15<span>/شهر</span></div>
+                  </div>
+                  <ul class="plan-features">
+                    <li>✅ جميع القنوات</li>
+                    <li>✅ جودة HD</li>
+                    <li>✅ دعم فني</li>
+                  </ul>
+                </div>
+                
+                <div class="plan-card popular" data-plan="quarterly" data-price="40">
+                  <div class="popular-badge">الأكثر شعبية</div>
+                  <div class="plan-header">
+                    <h5>باقة ربع سنوية</h5>
+                    <div class="price">$40<span>/3 أشهر</span></div>
+                    <div class="savings">وفر $5</div>
+                  </div>
+                  <ul class="plan-features">
+                    <li>✅ جميع القنوات</li>
+                    <li>✅ جودة 4K</li>
+                    <li>✅ دعم فني مميز</li>
+                    <li>✅ محتوى حصري</li>
+                  </ul>
+                </div>
+                
+                <div class="plan-card" data-plan="yearly" data-price="120">
+                  <div class="plan-header">
+                    <h5>باقة سنوية</h5>
+                    <div class="price">$120<span>/سنة</span></div>
+                    <div class="savings">وفر $60</div>
+                  </div>
+                  <ul class="plan-features">
+                    <li>✅ جميع القنوات</li>
+                    <li>✅ جودة 4K</li>
+                    <li>✅ دعم فني VIP</li>
+                    <li>✅ محتوى حصري</li>
+                    <li>✅ تطبيقات متعددة</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="customer-info">
+              <h4>معلومات العميل:</h4>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="customer-name">الاسم الكامل *</label>
+                  <input type="text" id="customer-name" name="customerName" required>
+                </div>
+                <div class="form-group">
+                  <label for="customer-email">البريد الإلكتروني *</label>
+                  <input type="email" id="customer-email" name="customerEmail" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="customer-phone">رقم الهاتف (اختياري)</label>
+                <input type="tel" id="customer-phone" name="customerPhone">
+              </div>
+            </div>
+
+            <div class="payment-summary">
+              <div class="summary-row">
+                <span>الباقة المختارة:</span>
+                <span id="selected-plan">لم يتم الاختيار</span>
+              </div>
+              <div class="summary-row">
+                <span>المبلغ:</span>
+                <span id="selected-price">$0</span>
+              </div>
+              <div class="summary-row total">
+                <span>المجموع:</span>
+                <span id="total-price">$0</span>
+              </div>
+            </div>
+
+            <div class="payment-methods">
+              <h4>طريقة الدفع:</h4>
+              <div class="payment-options">
+                <button type="button" class="payment-btn paypal-btn" onclick="processPayPalPayment()">
+                  <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" alt="PayPal">
+                  <span>الدفع عبر PayPal</span>
+                </button>
+                
+                <button type="button" class="payment-btn stripe-btn" onclick="processStripePayment()">
+                  <img src="https://stripe.com/img/v3/home/social.png" alt="Stripe" style="width: 60px;">
+                  <span>الدفع بالبطاقة</span>
+                </button>
+                
+                <button type="button" class="payment-btn crypto-btn" onclick="processCryptoPayment()">
+                  <span>💰</span>
+                  <span>الدفع بالعملات المشفرة</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="payment-security">
+          <div class="security-badges">
+            <div class="security-item">
+              <span class="security-icon">🔒</span>
+              <div>
+                <h5>تشفير SSL</h5>
+                <p>جميع المعاملات مشفرة</p>
+              </div>
+            </div>
+            <div class="security-item">
+              <span class="security-icon">🛡️</span>
+              <div>
+                <h5>حماية البيانات</h5>
+                <p>لا نحتفظ ببيانات البطاقات</p>
+              </div>
+            </div>
+            <div class="security-item">
+              <span class="security-icon">⚡</span>
+              <div>
+                <h5>تفعيل فوري</h5>
+                <p>يتم تفعيل الخدمة فورًا</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="payment-methods">
+      <h2>💳 طرق الدفع الإضافية</h2>
+      <div class="cards">
+        <div class="payment-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" loading="lazy">
+          <p>الدفع عبر واتساب</p>
+          <button onclick="window.location.href='https://wa.me/message/2JZ4HHC5JOSFC1'" aria-label="تواصل الآن عبر واتساب">تواصل الآن</button>
+        </div>
+        <div class="payment-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/309/309672.png" alt="Bank Transfer" loading="lazy">
+          <p>الدفع عبر التحويل البنكي</p>
+          <button onclick="alert('يرجى التواصل عبر واتساب للحصول على تفاصيل الحساب البنكي')" aria-label="تواصل للحصول على تفاصيل التحويل البنكي">تواصل للحصول على التفاصيل</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>📺 قسم الشاشات</h2>
+      <img src="https://b.top4top.io/p_3461bogr01.png" alt="شاشات RAFAL IPTV" class="section-header-img" loading="lazy">
+      <div class="cards">
+        <div class="card">
+          <h3 style="color:#00796b;">Smart TV</h3>
+          <p><strong>RAFAL IPTV</strong> يعمل بـ Username + Password</p>
+          <p>🔑 كود التحميل المباشر:</p>
+          <div class="code-copy-wrapper">
+            <input type="text" id="code1" value="9144017" readonly>
+            <button onclick="copyToClipboard('code1')" aria-label="نسخ كود Smart TV">📋 نسخ</button>
+          </div>
+          <div class="image" style="margin-top:15px;">
+            <img src="https://l.top4top.io/p_3457hp7b10.jpg" alt="Smart TV" loading="lazy">
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="color:#00796b;">Smart TV PRO</h3>
+          <p><strong>RAFAL IPTV PRO</strong> للشاشات الذكية Android - SMART</p>
+          <p>🔑 كود التحميل المباشر:</p>
+          <div class="code-copy-wrapper">
+            <input type="text" id="code2" value="2685207" readonly>
+            <button onclick="copyToClipboard('code2')" aria-label="نسخ كود Smart TV PRO">📋 نسخ</button>
+          </div>
+          <div class="image" style="margin-top:15px;">
+            <img src="https://h.top4top.io/p_3459jwlbg0.png" alt="Smart TV PRO" loading="lazy">
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="color:#00796b;">RAFAL IPTV PLUS</h3>
+          <div class="version-tag">📌 الإصدار: <span>v2.5</span></div>
+          <p>📱 يعمل على شاشات Smart TV و Android TV الحديثة</p>
+          <p>🔑 كود التحميل المباشر:</p>
+          <div class="code-copy-wrapper">
+            <input type="text" id="code3" value="7973715" readonly>
+            <button onclick="copyToClipboard('code3')" aria-label="نسخ كود RAFAL IPTV PLUS">📋 نسخ</button>
+          </div>
+          <div class="image" style="margin-top:15px;">
+            <img src="https://h.top4top.io/p_3461v5jzz0.png" alt="RAFAL IPTV PLUS" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>📱 قسم تطبيقات الموبايل</h2>
+      <img src="https://c.top4top.io/p_34619qdtw2.png" alt="تطبيقات الموبايل RAFAL IPTV" class="section-header-img" loading="lazy">
+      <p style="margin-bottom:20px;">🎯 تطبيق رافال نسخة اصلية</p>
+      <div class="cards">
+        <div class="card">
+          <h3 style="color:#00796b;">Mobile App</h3>
+          <p><strong>RAFAL IPTV</strong> 🔐 Username/Password</p>
+          <a href="https://www.mediafire.com/file/k5tox3h38532l72/RAFAL_IPTV_USER-PASS.apk/file" target="_blank">⬇️ تحميل مباشر</a>
+          <div class="image" style="margin-top:15px;">
+            <img src="https://g.top4top.io/p_3457nuyhu0.jpg" alt="Mobile App" loading="lazy">
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="color:#00796b;">RAFAL PRO V2</h3>
+          <p><strong>RAFAL IPTV PRO v2</strong> أحدث إصدار - يعمل بيوزر وباسورد</p>
+          <a href="https://www.mediafire.com/file/c74rvm046bnxicz/RAFAL_IPTV_PRO.apk/file" target="_blank">⬇️ تحميل مباشر</a>
+          <div class="image" style="margin-top:15px;">
+            <img src="https://k.top4top.io/p_3459pjymr0.jpg" alt="RAFAL IPTV PRO v2" loading="lazy">
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="color:#00796b;">RAFAL IPTV PLUS</h3>
+          <div class="version-tag">📌 الإصدار: <span>v2.5</span></div>
+          <p>📲 APK لجميع هواتف أندرويد</p>
+          <a href="https://www.mediafire.com/file/n63qnjwb9j89v7x/RAFAL-IPTV-PLUS.apk/file" target="_blank">⬇️ تحميل مباشر</a>
+          <div class="image" style="margin-top:15px;">
+            <img src="https://e.top4top.io/p_346153knm0.png" alt="RAFAL IPTV PLUS MOBILE" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>📡 قسم الرسيفرات</h2>
+      <img src="https://h.top4top.io/p_34614hbib0.png" alt="رسيفرات RAFAL IPTV" class="section-header-img" loading="lazy">
+      <p>📡 دعم شامل لأجهزة الاستقبال التالية:</p>
+      <ul class="receiver-list">
+        <li>✅ أجهزة استقبال <strong>سيناتور (Senator)</strong></li>
+        <li>✅ أجهزة استقبال <strong>هايبر (Hyper)</strong></li>
+        <li>✅ أجهزة استقبال <strong>نوفا (Nova)</strong></li>
+        <li>✅ أجهزة استقبال <strong>تايجر (Tiger)</strong></li>
+        <li>✅ أجهزة استقبال <strong>أسترا (Astra)</strong></li>
+        <li>✅ أجهزة استقبال <strong>ترومان (Truman)</strong></li>
+        <li>✅ أجهزة استقبال <strong>ستار سات (StarSat)</strong></li>
+        <li>✅ أجهزة استقبال <strong>CEMEX</strong></li>
+        <li>✅ أجهزة استقبال <strong>NEWGOLD</strong></li>
+        <li>✅ أجهزة استقبال <strong>4MAN</strong></li>
+        <li>✅ أجهزة استقبال <strong>Media X</strong></li>
+        <li>✅ أجهزة استقبال <strong>7STAR</strong></li>
+        <li>✅ أجهزة استقبال <strong>Qemax</strong></li>
+        <li>✅ أجهزة استقبال <strong>GX 📡 SUN PLUS 📡 FANILA</strong></li>
+        <li>📡 جميع الأجهزة تدعم تشغيل <strong>♦️ EXTREME ♦️</strong></li>
+      </ul>
+      <div class="image" style="margin-top: 15px; text-align: center;">
+        <img src="https://i.top4top.io/p_345787vm30.jpg" alt="Receiver" class="receiver-img" loading="lazy">
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>🎬 جديد - المحتوى</h2>
+      <p class="update-notice">📢 بيتم إضافة تحديث يومي للمكتبات بنسخ خاصة بسيرفر RAFAL مبدعين العرض الأول ✅🚀</p>
+      <div class="filter-buttons">
+        <button onclick="filterMedia('all')" aria-label="عرض جميع المحتوى">الكل</button>
+        <button onclick="filterMedia('movie')" aria-label="عرض الأفلام فقط">🎥 أفلام</button>
+        <button onclick="filterMedia('series')" aria-label="عرض المسلسلات فقط">📺 مسلسلات</button>
+      </div>
+      <div class="media-grid" id="media-grid">
+        <div class="media-item movie">
+          <img src="https://h.top4top.io/p_3457p10o85.jpg" alt="احدث الأفلام العالمية" loading="lazy">
+          <p>🎥 NEW Movie</p>
+        </div>
+        <div class="media-item movie">
+          <img src="https://f.top4top.io/p_3457a12si3.jpeg" alt="Xالمشروع" loading="lazy">
+          <p>🎥 Xالمشروع</p>
+        </div>
+        <div class="media-item movie">
+          <img src="https://c.top4top.io/p_34606h4kg0.jpg" alt="أحمد وأحمد" loading="lazy">
+          <p>🎥 أحمد وأحمد</p>
+        </div>
+        <div class="media-item movie">
+          <img src="https://d.top4top.io/p_3460xd40u1.jpeg" alt="BALRENA" loading="lazy">
+          <p>🎥 BALRENA</p>
+        </div>
+        <div class="media-item movie">
+          <img src="https://e.top4top.io/p_3461enlxf0.jpeg" alt="احدث الأفلام الهندية" loading="lazy">
+          <p>🎥 GANAPATH</p>
+        </div>
+        <div class="media-item movie">
+          <img src="https://f.top4top.io/p_346166do91.jpeg" alt="KING" loading="lazy">
+          <p>🎥 KING</p>
+        </div>
+        <div class="media-item series">
+          <img src="https://b.top4top.io/p_3457pjmu50.jpg" alt="احدث المسلسلات" loading="lazy">
+          <p>📺 احدث المسلسلات</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section seo-info">
+      <h2>📜 معلومات إضافية</h2>
+      <p>RAFAL IPTV هي الخيار الأمثل لمحبي الترفيه، حيث نقدم مكتبة واسعة من الأفلام والمسلسلات بجودة عالية، مع دعم متواصل على مدار الساعة. استمتع بتجربة مشاهدة سلسة على جميع أجهزتك سواء كانت شاشات ذكية، هواتف أندرويد، أو أجهزة استقبال. اشترك الآن واستفد من عروضنا الحصرية!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 RAFAL IPTV. جميع الحقوق محفوظة.</p>
+    <a class="whatsapp-btn" href="https://wa.me/message/2JZ4HHC5JOSFC1" target="_blank" aria-label="تواصل معنا عبر واتساب">💬 تواصل معنا عبر واتساب</a>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "RAFAL IPTV",
+    "description": "أفضل خدمة IPTV لمشاهدة القنوات والأفلام والمسلسلات مباشرة على جهازك.",
+    "provider": {
+      "@type": "Organization",
+      "name": "RAFAL IPTV",
+      "url": "https://yourwebsite.com"
+    }
+  }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
